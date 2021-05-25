@@ -4,10 +4,10 @@ import React from "react";
 export default function Header() {
   return (
     <div>
-      <div class="flex">
+      <div className="flex">
         <div className="flex-1">
-          <div class="gap-x-4 flex">
-            <div class="row-span-3 ">
+          <div className="gap-x-4 flex">
+            <div className="row-span-3 ">
               <Image
                 src="/images/logo.png"
                 alt="Axel Coudair Logo"
@@ -15,12 +15,12 @@ export default function Header() {
                 height={65}
               />
             </div>
-            <div class="grid grid-cols-1 gap-x-4 ">
-              <div class="col-span-2 ">
-                <span>Axel Coudair</span>
+            <div className="grid grid-cols-1 gap-x-4 ">
+              <div className="col-span-2 ">
+                <h1 className="font-bebasNeue text-3xl">Axel Coudair</h1>
               </div>
-              <div class="row-span-2 col-span-2 ">
-                <span>Développeur Full Stack</span>
+              <div className="row-span-2 col-span-2 ">
+                <h1 className="font-bebasNeue text-gray-400 text-3xl">Développeur Full Stack</h1>
               </div>
             </div>
           </div>
