@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind component;
+@tailwind utilities;
+
+.font-bebasNeue {
+  font-family: "Bebas Neue", cursive;
+}
+
