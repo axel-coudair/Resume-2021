@@ -20,7 +20,7 @@ export default function Header() {
                 <h1 className="font-bebasNeue text-3xl">Axel Coudair</h1>
               </div>
               <div className="row-span-2 col-span-2 ">
-                <h1 className="font-bebasNeue text-gray-400 text-3xl">Développeur Full Stack</h1>
+                <h1 className="font-bebasNeue text-gray-500 text-3xl">Développeur Full Stack</h1>
               </div>
             </div>
           </div>
