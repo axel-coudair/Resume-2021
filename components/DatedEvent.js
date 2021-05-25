@@ -10,26 +10,24 @@ export default function DatedEvent() {
           <span className="text-xl text-gray-500"> @Infotel</span>
         </h4>
         <h4 className="text-xl text-gray-300 md:hidden">2019 - 2020</h4>
-        <p>
-          <span>
-            Développement de sites vitrines sur CMS (Wordpress, Drupal).{" "}
-          </span>
-          <div className="sm:grid grid-cols-2 gap-4">
-            <ul className="list-disc list-inside">
-              <li>Recherche Utilisateur</li>
-              <li>Architecture de l'information</li>
-              <li>Réalisation d'interviews utilisateurs</li>
-              <li>Test utilisateurs</li>
-            </ul>
-            <ul className="list-disc list-inside">
-              <li>Animation d'ateliers d'idéations</li>
-              <li>Wireframes</li>
-              <li>Maquettes</li>
-              <li>Designer - Design Thinking</li>
-            </ul>
-          </div>
-          <span>Outils : Photoshop, Wordpress, OVH, PHP </span>
-        </p>
+        <span>
+          Développement de sites vitrines sur CMS (Wordpress, Drupal).{" "}
+        </span>
+        <div className="sm:grid grid-cols-2 gap-4">
+          <ul className="list-disc list-inside">
+            <li>Recherche Utilisateur</li>
+            <li>Architecture de l'information</li>
+            <li>Réalisation d'interviews utilisateurs</li>
+            <li>Test utilisateurs</li>
+          </ul>
+          <ul className="list-disc list-inside">
+            <li>Animation d'ateliers d'idéations</li>
+            <li>Wireframes</li>
+            <li>Maquettes</li>
+            <li>Designer - Design Thinking</li>
+          </ul>
+        </div>
+        <span>Outils : Photoshop, Wordpress, OVH, PHP </span>
       </div>
     </div>
   );
