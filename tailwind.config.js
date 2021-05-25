@@ -18,6 +18,7 @@ module.exports = {
     // },
     fontFamily: {
       bebasNeue: ["Bebas Neue", 'cursive'],
+      manrope: ["Manrope", 'sans-serif'],
     },
     // extend: {
     //   spacing: {
