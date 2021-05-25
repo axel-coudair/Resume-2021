@@ -5,7 +5,7 @@ import { GoogleFonts } from "next-google-fonts";
 export default function Layout({ title, children }) {
   return (
     <div>
-      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" />
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" />
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" />
       <Head>
         <title>{title}</title>
