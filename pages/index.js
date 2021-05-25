@@ -12,6 +12,7 @@ export default function Home() {
       <Description></Description>
       <TitleBar />
       <DatedEvent />
+      <DatedEvent />
       <TitleBar />
       <ListedPart />
     </Layout>
