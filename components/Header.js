@@ -2,8 +2,7 @@ import Image from "next/image";
 import React from "react";
 import ReactToPrint from "react-to-print";
 
-export default function Header(params) {
-  console.log(params.printable);
+export default function Header({ printable, data }) {
   return (
     <div className="flex pt-7">
       <div className="flex-1">
@@ -18,11 +17,11 @@ export default function Header(params) {
           </div>
           <div className="grid grid-cols-1 gap-x-4 ">
             <div className="col-span-2 ">
-              <h1 className="font-bebasNeue text-3xl">Axel Coudair</h1>
+              <h1 className="font-bebasNeue text-3xl">{data.name}</h1>
             </div>
             <div className="row-span-2 col-span-2 ">
               <h1 className="font-bebasNeue text-gray-500 text-2xl">
-                Développeur Full Stack
+                {data.jobTitle}
               </h1>
             </div>
           </div>
@@ -43,7 +42,7 @@ export default function Header(params) {
               </span>
             </button>
           )}
-          content={() => params.printable}
+          content={() => printable}
         />
       </div>
     </div>
