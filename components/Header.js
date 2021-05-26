@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
+import ReactToPrint from "react-to-print";
 
-export default function Header() {
+export default function Header(params) {
+  console.log(params.printable);
   return (
     <div className="flex pt-7">
       <div className="flex-1">
@@ -27,17 +29,22 @@ export default function Header() {
         </div>
       </div>
       <div className=" place-self-center print:hidden">
-        <button className="flex rounded-md hover:bg-gray-200 text-white-100 gap-2 p-1">
-          <Image
-            src="/images/icons/download.svg"
-            alt="download button"
-            width={20}
-            height={32}
-          />
-          <span className="hidden sm:block place-self-center">
-            Télécharger le CV
-          </span>
-        </button>
+        <ReactToPrint
+          trigger={() => (
+            <button className="flex rounded-md hover:bg-gray-200 text-white-100 gap-2 p-1">
+              <Image
+                src="/images/icons/download.svg"
+                alt="download button"
+                width={20}
+                height={32}
+              />
+              <span className="hidden sm:block place-self-center">
+                Télécharger le CV
+              </span>
+            </button>
+          )}
+          content={() => params.printable}
+        />
       </div>
     </div>
   );
