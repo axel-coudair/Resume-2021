@@ -15,18 +15,27 @@ export default class Home extends React.Component {
       hobbies,
       courses,
       languages,
+      trainings,
       experiences,
+      projects,
     } = this.props.data;
+
     return (
       <Layout title="Axel Coudair | Développeur Full stack">
         <Header className="fixed" printable={this} data={header}></Header>
         <Description data={description}></Description>
         <TitleBar title="Expérience" />
-        {this.props.data.experiences.map((experience, index) => (
-          <DatedEvent key={index} experience={experience} />
+        {experiences.map((experience, index) => (
+          <DatedEvent key={index} datedEvent={experience} />
         ))}
         <TitleBar title="Formation" />
+        {trainings.map((training, index) => (
+          <DatedEvent key={index} datedEvent={training} />
+        ))}
         <TitleBar title="Projets" />
+        {projects.map((project, index) => (
+          <DatedEvent key={index} datedEvent={project} />
+        ))}
         <TitleBar title="Compétences" />
         <TitleBar title="Langues" />
         <TitleBar title="Loisirs" />

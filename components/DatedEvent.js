@@ -1,29 +1,29 @@
 import React from "react";
 
 export default function DatedEvent(props) {
-  const { experience } = props;
+  const { datedEvent } = props;
   return (
     <div className="grid grid-cols-3 gap-4 pb-6">
       <h4 className="text-xl text-gray-300 hidden md:block">
-        {experience.dates}
+        {datedEvent.dates}
       </h4>
       <div className="col-span-3 md:col-span-2">
         <h4 className="text-xl font-semi-bold">
-          <span>{experience.title}</span>
-          <span className="text-xl text-gray-500"> @{experience.place}</span>
+          <span>{datedEvent.title}</span>
+          <span className="text-xl text-gray-500"> @{datedEvent.place}</span>
         </h4>
-        <h4 className="text-xl text-gray-300 md:hidden">{experience.dates}</h4>
-        <span>{experience.description} </span>
-        {experience.lists ? (
+        <h4 className="text-xl text-gray-300 md:hidden">{datedEvent.dates}</h4>
+        <span>{datedEvent.description} </span>
+        {datedEvent.lists ? (
           <div
             className={
-              "sm:grid grid-cols-" + experience.lists.length + " gap-4"
+              "sm:grid grid-cols-" + datedEvent.lists.length + " gap-4"
             }
           >
-            {experience.lists.map((list, index) => (
-              <ul className="list-disc list-inside">
-                {list.map((item, index) => (
-                  <li>{item}</li>
+            {datedEvent.lists.map((list, index) => (
+              <ul key={index} className="list-disc list-inside">
+                {list.map((item, index2) => (
+                  <li key={index2}>{item}</li>
                 ))}
               </ul>
             ))}
@@ -31,7 +31,7 @@ export default function DatedEvent(props) {
         ) : (
           ""
         )}
-        <span>{experience.finalDescrition}</span>
+        <span>{datedEvent.finalDescrition}</span>
       </div>
     </div>
   );

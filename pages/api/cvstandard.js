@@ -1,8 +1,8 @@
 export default (req, res) => {
   res.status(200).json({
     header: {
-      name: "John Doe2",
-      jobTitle: "ingé ta vu",
+      name: "AXEL COUDAIR",
+      jobTitle: "DÉVELOPPEUR FULL STACK",
     },
     description: {
       texte:
@@ -39,7 +39,7 @@ export default (req, res) => {
         title: "Designer - Design Thinking",
         place: "Infotel",
         description: "",
-        list1: [
+        lists: [
           [
             "Mise en place d’un processus de Design Thinking",
             "Réalisation d’un parcours utilisateur (Customer Journey Map)",
@@ -55,7 +55,7 @@ export default (req, res) => {
           "Outils : TargetProcess, Powerpoint, Excel, G suite, SCRUM, Gravit Design, Invision",
       },
     ],
-    training: [
+    trainings: [
       {
         dates: "Janvier 2021 - Actuel",
         title: "Formation d'UX design",
@@ -82,14 +82,17 @@ export default (req, res) => {
         place: "ESD Paris",
         description: "",
         lists: [
-          ["Data Analyse", "Product management", "Inbound marketing"],
-          ,
+          [
+            "Data Analyse",
+            "Product management",
+            "Inbound marketing",
+            "Test utilisateurs",
+          ],
           ["UI Design", "Marketing Mobile", "Design de service"],
         ],
         finalDescrition: "",
       },
     ],
-
     projects: [
       {
         dates: "2019",
