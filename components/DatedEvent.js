@@ -1,33 +1,37 @@
 import React from "react";
 
-export default function DatedEvent() {
+export default function DatedEvent(props) {
+  const { experience } = props;
   return (
     <div className="grid grid-cols-3 gap-4 pb-6">
-      <h4 className="text-xl text-gray-300 hidden md:block">2019 - 2020</h4>
+      <h4 className="text-xl text-gray-300 hidden md:block">
+        {experience.dates}
+      </h4>
       <div className="col-span-3 md:col-span-2">
         <h4 className="text-xl font-semi-bold">
-          <span>Designer - Design Thinking</span>
-          <span className="text-xl text-gray-500"> @Infotel</span>
+          <span>{experience.title}</span>
+          <span className="text-xl text-gray-500"> @{experience.place}</span>
         </h4>
-        <h4 className="text-xl text-gray-300 md:hidden">2019 - 2020</h4>
-        <span>
-          Développement de sites vitrines sur CMS (Wordpress, Drupal).{" "}
-        </span>
-        <div className="sm:grid grid-cols-2 gap-4">
-          <ul className="list-disc list-inside">
-            <li>Recherche Utilisateur</li>
-            <li>Architecture de l'information</li>
-            <li>Réalisation d'interviews utilisateurs</li>
-            <li>Test utilisateurs</li>
-          </ul>
-          <ul className="list-disc list-inside">
-            <li>Animation d'ateliers d'idéations</li>
-            <li>Wireframes</li>
-            <li>Maquettes</li>
-            <li>Designer - Design Thinking</li>
-          </ul>
-        </div>
-        <span>Outils : Photoshop, Wordpress, OVH, PHP </span>
+        <h4 className="text-xl text-gray-300 md:hidden">{experience.dates}</h4>
+        <span>{experience.description} </span>
+        {experience.lists ? (
+          <div
+            className={
+              "sm:grid grid-cols-" + experience.lists.length + " gap-4"
+            }
+          >
+            {experience.lists.map((list, index) => (
+              <ul className="list-disc list-inside">
+                {list.map((item, index) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
+        <span>{experience.finalDescrition}</span>
       </div>
     </div>
   );

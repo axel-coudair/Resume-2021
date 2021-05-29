@@ -8,7 +8,6 @@ import ListedPart from "../components/ListedPart";
 
 export default class Home extends React.Component {
   render() {
-    const data = this.props.data;
     const {
       header,
       description,
@@ -23,15 +22,14 @@ export default class Home extends React.Component {
         <Header className="fixed" printable={this} data={header}></Header>
         <Description data={description}></Description>
         <TitleBar title="Expérience" />
-        {/* {experiences.forEach((experience) => {
-          <DatedEvent experience={experience} />;
-        })} */}
+        {this.props.data.experiences.map((experience, index) => (
+          <DatedEvent key={index} experience={experience} />
+        ))}
         <TitleBar title="Formation" />
         <TitleBar title="Projets" />
         <TitleBar title="Compétences" />
         <TitleBar title="Langues" />
         <TitleBar title="Loisirs" />
-        <DatedEvent />
         <TitleBar />
         <ListedPart />
       </Layout>
@@ -43,12 +41,10 @@ export async function getServerSideProps(context) {
   try {
     const res = await fetch("http://localhost:3000/api/cvstandard");
     const data = await res.json();
-    console.log(data);
     return {
       props: { data },
     };
   } catch (err) {
-    console.log(err);
     return err;
   }
 }
