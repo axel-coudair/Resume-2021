@@ -3,7 +3,7 @@ import React from "react";
 export default function DatedEvent(props) {
   const { datedEvent } = props;
   return (
-    <div className="grid grid-cols-3 gap-4 pb-6">
+    <div className="grid grid-cols-3 gap-4 pb-8">
       <h4 className="text-xl text-gray-300 hidden md:block">
         {datedEvent.dates}
       </h4>

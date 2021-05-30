@@ -5,6 +5,7 @@ import Description from "../components/Description";
 import TitleBar from "../components/TitleBar";
 import DatedEvent from "../components/DatedEvent";
 import ListedPart from "../components/ListedPart";
+import Footer from "../components/Footer";
 
 export default class Home extends React.Component {
   render() {
@@ -41,6 +42,8 @@ export default class Home extends React.Component {
         <ListedPart lists={languages} />
         <TitleBar title="Loisirs" />
         <ListedPart lists={hobbies} />
+        <TitleBar />
+        <Footer />
       </Layout>
     );
   }
