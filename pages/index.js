@@ -8,16 +8,52 @@ import ListedPart from "../components/ListedPart";
 
 export default class Home extends React.Component {
   render() {
+    const {
+      header,
+      description,
+      skills,
+      hobbies,
+      languages,
+      trainings,
+      experiences,
+      projects,
+    } = this.props.data;
+
     return (
       <Layout title="Axel Coudair | Développeur Full stack">
-        <Header className="fixed" printable={this}></Header>
-        <Description></Description>
-        <TitleBar />
-        <DatedEvent />
-        <DatedEvent />
-        <TitleBar />
-        <ListedPart />
+        <Header className="fixed" printable={this} data={header}></Header>
+        <Description data={description}></Description>
+        <TitleBar title="Expérience" />
+        {experiences.map((experience, index) => (
+          <DatedEvent key={index} datedEvent={experience} />
+        ))}
+        <TitleBar title="Formation" />
+        {trainings.map((training, index) => (
+          <DatedEvent key={index} datedEvent={training} />
+        ))}
+        <TitleBar title="Projets" />
+        {projects.map((project, index) => (
+          <DatedEvent key={index} datedEvent={project} />
+        ))}
+        <TitleBar title="Compétences" />
+        <ListedPart lists={skills} />
+        <TitleBar title="Langues" />
+        <ListedPart lists={languages} />
+        <TitleBar title="Loisirs" />
+        <ListedPart lists={hobbies} />
       </Layout>
     );
+  }
+}
+
+export async function getServerSideProps(context) {
+  try {
+    const res = await fetch("http://localhost:3000/api/cvstandard");
+    const data = await res.json();
+    return {
+      props: { data },
+    };
+  } catch (err) {
+    return err;
   }
 }
