@@ -13,7 +13,6 @@ export default class Home extends React.Component {
       description,
       skills,
       hobbies,
-      courses,
       languages,
       trainings,
       experiences,
@@ -37,10 +36,11 @@ export default class Home extends React.Component {
           <DatedEvent key={index} datedEvent={project} />
         ))}
         <TitleBar title="Compétences" />
+        <ListedPart lists={skills} />
         <TitleBar title="Langues" />
+        <ListedPart lists={languages} />
         <TitleBar title="Loisirs" />
-        <TitleBar />
-        <ListedPart />
+        <ListedPart lists={hobbies} />
       </Layout>
     );
   }
