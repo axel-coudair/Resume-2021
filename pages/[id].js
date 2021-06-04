@@ -6,8 +6,9 @@ import TitleBar from "../components/TitleBar";
 import DatedEvent from "../components/DatedEvent";
 import ListedPart from "../components/ListedPart";
 import Footer from "../components/Footer";
+import { withRouter } from "next/router";
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   render() {
     const {
       header,
@@ -21,7 +22,7 @@ export default class Home extends React.Component {
     } = this.props.data;
 
     return (
-      <Layout title="Axel Coudair | Développeur Full stack">
+      <Layout title={header.name + " | " + header.jobTitle}>
         <Header className="fixed" printable={this} data={header}></Header>
         <Description data={description}></Description>
         <TitleBar title="Expérience" />
@@ -49,9 +50,12 @@ export default class Home extends React.Component {
   }
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ query }) {
+  const id = query.id;
   try {
-    const res = await fetch(`${process.env.API_LINK}cvstandard`);
+    const res = await fetch(`${process.env.API_LINK}cvstandard/${id}`);
+    console.log(res);
+
     const data = await res.json();
     return {
       props: { data },
@@ -60,3 +64,4 @@ export async function getServerSideProps(context) {
     return err;
   }
 }
+export default withRouter(Home);
