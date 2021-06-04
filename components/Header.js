@@ -31,7 +31,7 @@ export default function Header({ printable, data }) {
         <ReactToPrint
           trigger={() => (
             <button className="flex rounded-md hover:bg-gray-200 text-white-100 gap-2 p-1">
-              <Image
+              <img
                 src="/images/icons/download.svg"
                 alt="download button"
                 width={20}
