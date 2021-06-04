@@ -51,7 +51,7 @@ export default class Home extends React.Component {
 
 export async function getServerSideProps(context) {
   try {
-    const res = await fetch("http://localhost:3000/api/cvstandard");
+    const res = await fetch(`${process.env.API_LINK}/cvstandard`);
     const data = await res.json();
     return {
       props: { data },
