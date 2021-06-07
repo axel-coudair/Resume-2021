@@ -54,8 +54,6 @@ export async function getServerSideProps({ query }) {
   const id = query.id;
   try {
     const res = await fetch(`${process.env.API_LINK}cvstandard/${id}`);
-    console.log(res);
-
     const data = await res.json();
     return {
       props: { data },
