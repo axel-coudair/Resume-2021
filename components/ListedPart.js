@@ -9,7 +9,7 @@ export default function ListedPart({ lists }) {
         <div key={index} className="pb-2">
           <h4 className="text-xl font-semi-bold">{list.title}</h4>
           <ul className="list-disc list-inside pt-2">
-            {list.data.map((item, index) => (
+            {list.list.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
