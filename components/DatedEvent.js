@@ -10,7 +10,7 @@ export default function DatedEvent(props) {
       <div className="col-span-3 md:col-span-2">
         <h4 className="text-xl font-semi-bold">
           <span>{datedEvent.title}</span>
-          <span className="text-xl text-gray-500"> @{datedEvent.place}</span>
+          {datedEvent.place ? <span className="text-xl text-gray-500"> @{datedEvent.place}</span>:""}
         </h4>
         <h4 className="text-xl text-gray-300 md:hidden">{datedEvent.dates}</h4>
         <span>{datedEvent.description} </span>

@@ -12,7 +12,6 @@ import { serverClient } from "../utils/fauna-auth";
 
 class Home extends React.Component {
   render() {
-    console.log(this.props.data);
     const {
       header,
       description,
