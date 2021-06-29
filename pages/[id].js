@@ -5,6 +5,7 @@ import Description from "../components/Description";
 import TitleBar from "../components/TitleBar";
 import DatedEvent from "../components/DatedEvent";
 import ListedPart from "../components/ListedPart";
+import QrPart from "../components/QrPart";
 import Footer from "../components/Footer";
 import { withRouter } from "next/router";
 import { query as q } from "faunadb";
@@ -22,11 +23,13 @@ class Home extends React.Component {
       experiences,
       projects,
     } = this.props.data;
-
     return (
       <Layout title={header.name + " | " + header.jobTitle}>
         <Header className="fixed" printable={this} data={header}></Header>
-        <Description description={description}></Description>
+        <div className="flex py-6">
+          <Description className="place-self-center" description={description}></Description>
+          <QrPart className="hidden sm:block flex-1" path={this.props.router.asPath}></QrPart>
+        </div>
         <TitleBar title="Expérience" />
         {experiences.map((experience, index) => (
           <DatedEvent key={index} datedEvent={experience} />

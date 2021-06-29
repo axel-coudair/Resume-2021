@@ -3,7 +3,7 @@ import React from "react";
 export default function Description({description}) {
 const {texte, age, localisation, mail,phone} = description;
   return (
-    <div className="max-w-xl py-6">
+    <div>
       <p className="font-manrope font-light">
         {texte}
       </p>
