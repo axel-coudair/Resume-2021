@@ -26,7 +26,7 @@ class Home extends React.Component {
     return (
       <Layout title={header.name + " | " + header.jobTitle}>
         <Header className="fixed" printable={this} data={header}></Header>
-        <Description data={description}></Description>
+        <Description description={description}></Description>
         <TitleBar title="Expérience" />
         {experiences.map((experience, index) => (
           <DatedEvent key={index} datedEvent={experience} />
