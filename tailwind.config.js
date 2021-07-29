@@ -1,11 +1,23 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
-    extend: {},
+    fontFamily: {
+      bebasNeue: ["Bebas Neue", "cursive"],
+      manrope: ["Manrope", "sans-serif"],
+    },
+    extend: {
+      screens: {
+        print: { raw: "print" },
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
+
+module.exports = {};

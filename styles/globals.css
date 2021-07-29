@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind component;
+@tailwind utilities;
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: lighter;
+}
+h4 {
+  font-weight: normal;
+}
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", cursive;
+}
+.font-bebasNeue {
+  font-family: "Bebas Neue", cursive;
+}
+.font-manrope {
+  font-family: "Manrope", sans-serif;
+}
