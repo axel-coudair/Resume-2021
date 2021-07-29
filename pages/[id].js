@@ -27,7 +27,7 @@ class Home extends React.Component {
       <Layout title={header.name + " | " + header.jobTitle}>
         <Header className="fixed" printable={this} data={header}></Header>
         <div className="flex py-6">
-          <Description className="place-self-center" description={description}></Description>
+          <Description description={description}></Description>
           <QrPart className="hidden sm:block flex-1" path={this.props.router.asPath}></QrPart>
         </div>
         <TitleBar title="Expérience" />
@@ -57,7 +57,6 @@ class Home extends React.Component {
 
 export async function getServerSideProps({ query }) {
   const id = query.id;
-  // Quick fix
   try {
     const res = await serverClient.query(
       q.Let(
